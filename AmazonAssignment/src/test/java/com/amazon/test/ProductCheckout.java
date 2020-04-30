@@ -42,8 +42,7 @@ public class ProductCheckout extends BaseClass {
 	By checkoutProductName = putility.getObject("checkoutProductName");
 
 	/*
-	 * Testcase to compare the details of product search page with product checkout
-	 * page
+	 * Testcase to compare the details of product search page with product checkout page
 	 */
 	@Test
 	public void testProductCheckout() {
@@ -64,7 +63,7 @@ public class ProductCheckout extends BaseClass {
 		waitForElementPresence(ratings);
 
 		// Rotate the screen from default portrait to landscape
-		//rotateScreen(ScreenOrientation.LANDSCAPE);
+		rotateScreen(ScreenOrientation.LANDSCAPE);
 
 		// Identify Elememt using Text usimg scroll gesture
 		ProductSearchPage productSearchPage = new ProductSearchPage();
@@ -77,14 +76,14 @@ public class ProductCheckout extends BaseClass {
 		String searchProductName = productSearchPage.getProductText();
 		element.click();
 
-//		if (isElementDisplayed(languageSelection)) {
-//			clickElement(languageSelection);
-//			LOGGER.info("languageSelection radio button" + languageSelection + "  clicked");
-//
-//			waitForElementPresence(saveChanges);
-//			clickElement(saveChanges);
-//			LOGGER.info("saveChanges button" + saveChanges + "  clicked");
-//		}
+		if (isElementDisplayed(languageSelection)) {
+			clickElement(languageSelection);
+			LOGGER.info("languageSelection radio button" + languageSelection + "  clicked");
+
+			waitForElementPresence(saveChanges);
+			clickElement(saveChanges);
+			LOGGER.info("saveChanges button" + saveChanges + "  clicked");
+		}
 
 		waitForElementPresence(checkoutProductName);
 		ProductDetailPage productDetailPage = new ProductDetailPage();
