@@ -7,6 +7,7 @@ import static org.testng.Assert.assertTrue;
 import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.ScreenOrientation;
 import org.testng.annotations.Test;
 
@@ -29,6 +30,7 @@ import io.appium.java_client.MobileElement;
  *         screen 
  *         2020-Apr-30 Karthika : Handled Swipe event and Re-factored the
  *         testcase
+ *         2020-May-04 Karthika : Re-factored the code
  * 
  */
 
@@ -49,14 +51,7 @@ public class ProductCheckout extends BaseClass {
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginToAmazon();
 		// to select the language
-		waitForElementPresence(languageSelection);
-		clickElement(languageSelection);
-		LOGGER.info("languageSelection radio button" + languageSelection + "  clicked");
-
-		waitForElementPresence(saveChanges);
-		clickElement(saveChanges);
-		LOGGER.info("saveChanges button" + saveChanges + "  clicked");
-
+		languageSelection();
 		waitForElementPresence(search);
 		ProductSearchPage searchPage = new ProductSearchPage();
 		searchPage.searchTV();
@@ -75,15 +70,9 @@ public class ProductCheckout extends BaseClass {
 
 		String searchProductName = productSearchPage.getProductText();
 		element.click();
+		rotateScreen(ScreenOrientation.PORTRAIT);
 
-		if (isElementDisplayed(languageSelection)) {
-			clickElement(languageSelection);
-			LOGGER.info("languageSelection radio button" + languageSelection + "  clicked");
-
-			waitForElementPresence(saveChanges);
-			clickElement(saveChanges);
-			LOGGER.info("saveChanges button" + saveChanges + "  clicked");
-		}
+		languageSelection();
 
 		waitForElementPresence(checkoutProductName);
 		ProductDetailPage productDetailPage = new ProductDetailPage();
@@ -92,6 +81,21 @@ public class ProductCheckout extends BaseClass {
 		if (searchProductName.equalsIgnoreCase(checkoutProductName)) {
 			LOGGER.info("Test case ran successfully");
 		}
+	}
+	public void languageSelection() {
+		try {
+          if( driver.findElement(languageSelection).isDisplayed() && driver.findElement(languageSelection).isEnabled()) {
+        	  clickElement(languageSelection);
+        	  
+        	  waitForElementPresence(saveChanges);
+        	  clickElement(saveChanges);
+        	  LOGGER.info("saveChanges button" + saveChanges + "  clicked");
+          }
+		}
+		catch(NoSuchElementException igNoSuchElementException) {
+			
+		}
+		LOGGER.info("languageSelection radio button" + languageSelection + "  is not visible");
 	}
 
 }
