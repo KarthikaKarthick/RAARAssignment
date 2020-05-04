@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.ScreenOrientation;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.amazon.common.PropertyUtility;
@@ -31,6 +32,7 @@ import io.appium.java_client.MobileElement;
  *         2020-Apr-30 Karthika : Handled Swipe event and Re-factored the
  *         testcase
  *         2020-May-04 Karthika : Re-factored the code
+ *         2020-May-04 Karthika : Added data provider to read input data from excel 
  * 
  */
 
@@ -46,15 +48,17 @@ public class ProductCheckout extends BaseClass {
 	/*
 	 * Testcase to compare the details of product search page with product checkout page
 	 */
-	@Test
-	public void testProductCheckout() {
+	@Test(dataProvider="productType")
+	public void testProductCheckout(String productSearchType) {
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginToAmazon();
 		// to select the language
 		languageSelection();
 		waitForElementPresence(search);
 		ProductSearchPage searchPage = new ProductSearchPage();
-		searchPage.searchTV();
+		System.out.println("Added method to read input data from excel"+productSearchType);
+		// pass product search type from data provider
+		searchPage.searchTV(productSearchType);
 		waitForElementPresence(ratings);
 
 		// Rotate the screen from default portrait to landscape
@@ -96,6 +100,12 @@ public class ProductCheckout extends BaseClass {
 			
 		}
 		LOGGER.info("languageSelection radio button" + languageSelection + "  is not visible");
+	}
+	
+	@DataProvider(name="productType")
+	public Object[][] loginData() {
+		Object[][] arrayObject = readInputFromExcel("F:\\Interviews\\oxy_ws\\AmazonAssignment\\src\\main\\resources\\configs\\TestData\\ProductSearchType1.xlsx");
+		return arrayObject;
 	}
 
 }

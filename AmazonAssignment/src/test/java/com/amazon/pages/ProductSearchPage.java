@@ -42,8 +42,8 @@ public class ProductSearchPage extends BaseClass{
 	MobileElement element;
 	
 	/* Method to perform Search operation */
-	public void searchTV() {
-		setValue(search, "65 inch TV");
+	public void searchTV(String productSearchType) {
+		setValue(search, productSearchType);
 		((RemoteWebDriver) driver).executeScript("mobile: performEditorAction", ImmutableMap.of("action", "search"));
 		LOGGER.info("Performed search");
 	}

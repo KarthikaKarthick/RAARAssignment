@@ -3,11 +3,18 @@ package com.amazon.pages;
 import static com.amazon.common.Constants.APP_PROPERTIES_FILE_PATH;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.logging.Logger;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
@@ -39,6 +46,7 @@ import io.appium.java_client.android.AndroidDriver;
  *         invokethe driver with desired capablities 
  *         2020-Apr-30 Karthika : Added few methods to handle common actions
  *         2020-May-04 Karthika : Re-factored the code
+ *         2020-May-04 Karthika : Added method to read input data from excel
  * 
  */
 
@@ -47,6 +55,7 @@ public class BaseClass {
 	private static final Logger LOGGER = Logger.getLogger(BaseClass.class.getName());
 	// to load all the common properties
 	PropertyUtility prop = new PropertyUtility(APP_PROPERTIES_FILE_PATH);
+	XSSFWorkbook wb= null;
 
 	/*
 	 * Returns all the capabilities that can be used as prerequisites and Invoke the
@@ -154,11 +163,14 @@ public class BaseClass {
 		wait.until(ExpectedConditions.presenceOfElementLocated(selector));
 	}
 
-	/* Method to test the app in landscape mode */
+	/* Method to test the app in landscape mode 
+	 * @param Orientation - Landscape / portrait 
+	 * */
 	protected void rotateScreen(ScreenOrientation orientation) {
 		((AppiumDriver) driver).rotate(orientation);
 	}
 
+	/* Method to take screensht if any test case fails */
 	protected void takeScreenshot() {
 		TakesScreenshot scrShot = (TakesScreenshot) driver;
 		File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
@@ -168,10 +180,41 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 	}
+	
+	/* Method to read data from excel 
+	 * @param fileName - test data input file name
+	 * */
+	protected Object[][] readInputFromExcel(String fileName) {
+		Object[][] arrayExcelData = null;
+		try {
+			File src = new File(fileName);
+			// to load file
+			FileInputStream fis = new FileInputStream(src);
+			// to load workbook
+			XSSFWorkbook wb = new XSSFWorkbook(fis);
+			// to load first sheet
+			XSSFSheet sh = wb.getSheetAt(0);
+			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+			for (int i = 1; i < rowCount + 1; i++) {
+				Row row = sh.getRow(i);
+				arrayExcelData = new String[rowCount][row.getLastCellNum()];
+				for (int j = 0; j < row.getLastCellNum(); j++) {
+					arrayExcelData[i - 1][j] = row.getCell(j).getStringCellValue();
+				}
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ArrayIndexOutOfBoundsException e) {
+			e.printStackTrace();
+		}
+		return arrayExcelData;
+	}
 
 	/* Methd to quit the driver after the test executed */
 	@AfterSuite
-	public void teardown() {
+	public void teardown() throws IOException {
 		driver.quit();
 	}
 }
