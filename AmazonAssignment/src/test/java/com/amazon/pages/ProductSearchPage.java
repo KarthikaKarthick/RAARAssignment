@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.Assert;
 
 import com.amazon.common.PropertyUtility;
 import com.amazon.test.ProductCheckout;

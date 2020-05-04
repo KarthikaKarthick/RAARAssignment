@@ -4,15 +4,14 @@ import static com.amazon.common.Constants.APP_PROPERTIES_FILE_PATH;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.logging.Logger;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
@@ -184,33 +183,55 @@ public class BaseClass {
 	/* Method to read data from excel 
 	 * @param fileName - test data input file name
 	 * */
-	protected Object[][] readInputFromExcel(String fileName) {
-		Object[][] arrayExcelData = null;
-		try {
-			File src = new File(fileName);
-			// to load file
-			FileInputStream fis = new FileInputStream(src);
-			// to load workbook
-			XSSFWorkbook wb = new XSSFWorkbook(fis);
-			// to load first sheet
-			XSSFSheet sh = wb.getSheetAt(0);
-			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
-			for (int i = 1; i < rowCount + 1; i++) {
-				Row row = sh.getRow(i);
-				arrayExcelData = new String[rowCount][row.getLastCellNum()];
-				for (int j = 0; j < row.getLastCellNum(); j++) {
-					arrayExcelData[i - 1][j] = row.getCell(j).getStringCellValue();
+	protected static Object[][] readInputFromExcel(String fileName) throws IOException {
+
+		File src = new File(fileName);
+		// Excel sheet file location get mentioned here
+		FileInputStream fileInputStream = new FileInputStream(src); 
+		// get my workbook
+		XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream); 
+		// get my sheet from workbook
+		XSSFSheet worksheet = workbook.getSheet("Sheet1");
+		// get my Row which start from 0
+		XSSFRow Row = worksheet.getRow(0); 
+		DataFormatter formatter = new DataFormatter();
+		// count my number of Rows
+		int RowNum = worksheet.getPhysicalNumberOfRows();
+		// get last ColNum
+		int ColNum = Row.getLastCellNum(); 
+		// pass my count data in array
+		Object Data[][] = new Object[RowNum - 1][ColNum]; 
+		// Loop work for Rows
+		for (int i = 0; i < RowNum - 1; i++) 
+		{
+			XSSFRow row = worksheet.getRow(i + 1);
+			// Loop work for colNum
+			for (int j = 0; j < ColNum; j++) 
+			{
+				if (row == null)
+					Data[i][j] = "";
+				else {
+					XSSFCell cell = row.getCell(j);
+					if (cell == null)
+						// if it get Null value it pass no data
+						Data[i][j] = ""; 
+					else {
+						String value = formatter.formatCellValue(cell);
+						// This formatter get my all values as string i.e integer, float all type
+						// data value
+						Data[i][j] = value; 
+					}
 				}
 			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ArrayIndexOutOfBoundsException e) {
-			e.printStackTrace();
 		}
-		return arrayExcelData;
+
+		return Data;
 	}
+	
+	public static void main(String args[]) throws IOException {
+		readInputFromExcel("F:\\Interviews\\oxy_ws\\AmazonAssignment\\src\\main\\resources\\configs\\TestData\\ProductSearchType1.xlsx");
+	}
+	
 
 	/* Methd to quit the driver after the test executed */
 	@AfterSuite

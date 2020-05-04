@@ -4,6 +4,7 @@ import static com.amazon.common.Constants.PROPERTY_FILE_PATH;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
@@ -103,7 +104,7 @@ public class ProductCheckout extends BaseClass {
 	}
 	
 	@DataProvider(name="productType")
-	public Object[][] loginData() {
+	public Object[][] searchInputData() throws IOException {
 		Object[][] arrayObject = readInputFromExcel("F:\\Interviews\\oxy_ws\\AmazonAssignment\\src\\main\\resources\\configs\\TestData\\ProductSearchType1.xlsx");
 		return arrayObject;
 	}

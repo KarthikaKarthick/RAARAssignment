@@ -2,13 +2,11 @@ package com.amazon.pages;
 
 import static com.amazon.common.Constants.APP_PROPERTIES_FILE_PATH;
 import static com.amazon.common.Constants.PROPERTY_FILE_PATH;
-import static org.junit.Assert.assertTrue;
 
 import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 import com.amazon.common.PropertyUtility;
 import com.amazon.test.ProductCheckout;

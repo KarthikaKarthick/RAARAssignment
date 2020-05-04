@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon May 04 21:22:28 IST 2020</td>
+<td>Started on:</td><td>Tue May 05 00:16:06 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>93 seconds (93099 ms)</td>
+<tr><td>Total time:</td><td>168 seconds (168504 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,33 +75,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.amazon.test.ProductCheckout.testProductCheckout()'><b>testProductCheckout</b><br>Test class: com.amazon.test.ProductCheckout<br>Parameters: null</td>
-<td><div><pre>java.lang.AssertionError: Value could not be set in element - By.id: ap_email_login   because - org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;DK-PC&apos;, ip: &apos;192.168.1.104&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_241&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, databaseEnabled: false, desired: {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, deviceName: A2QDU17111006740, noRest: true, platformName: android, platformVersion: 7.0, udid: A2QDU17111006740}, deviceManufacturer: HUAWEI, deviceModel: BLN-L22, deviceName: A2QDU17111006740, deviceScreenSize: 1080x1920, deviceUDID: A2QDU17111006740, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noRest: true, platform: LINUX, platformName: Android, platformVersion: 7.0, takesScreenshot: true, udid: A2QDU17111006740, warnings: {}, webStorageEnabled: false}
-Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
-*** Element info: {Using=id, value=ap_email_login}
-	at com.amazon.pages.BaseClass.setValue(BaseClass.java:136)
-	at com.amazon.pages.LoginPage.validateValidUserLoginSuccess(LoginPage.java:82)
-	at com.amazon.pages.LoginPage.loginToAmazon(LoginPage.java:51)
-	at com.amazon.test.ProductCheckout.testProductCheckout(ProductCheckout.java:54)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1372422140", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1372422140'><pre>java.lang.AssertionError: Value could not be set in element - By.id: ap_email_login   because - org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;DK-PC&apos;, ip: &apos;192.168.1.104&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_241&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, databaseEnabled: false, desired: {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, deviceName: A2QDU17111006740, noRest: true, platformName: android, platformVersion: 7.0, udid: A2QDU17111006740}, deviceManufacturer: HUAWEI, deviceModel: BLN-L22, deviceName: A2QDU17111006740, deviceScreenSize: 1080x1920, deviceUDID: A2QDU17111006740, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noRest: true, platform: LINUX, platformName: Android, platformVersion: 7.0, takesScreenshot: true, udid: A2QDU17111006740, warnings: {}, webStorageEnabled: false}
-Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
-*** Element info: {Using=id, value=ap_email_login}
+<td title='com.amazon.test.ProductCheckout.testProductCheckout()'><b>testProductCheckout</b><br>Test class: com.amazon.test.ProductCheckout<br>Parameters: 65 inch TV</td>
+<td><div><pre>java.lang.AssertionError: expected [] but found [Shinco 165 cm (65 Inches) 4K UHD Smart LED TV S65QHDR10 (Black) (2019 model)]
+	at com.amazon.test.ProductCheckout.testProductCheckout(ProductCheckout.java:85)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1059300256", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1059300256'><pre>java.lang.AssertionError: expected [] but found [Shinco 165 cm (65 Inches) 4K UHD Smart LED TV S65QHDR10 (Black) (2019 model)]
 	at org.testng.Assert.fail(Assert.java:94)
-	at com.amazon.pages.BaseClass.setValue(BaseClass.java:136)
-	at com.amazon.pages.LoginPage.validateValidUserLoginSuccess(LoginPage.java:82)
-	at com.amazon.pages.LoginPage.loginToAmazon(LoginPage.java:51)
-	at com.amazon.test.ProductCheckout.testProductCheckout(ProductCheckout.java:54)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at com.amazon.test.ProductCheckout.testProductCheckout(ProductCheckout.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -127,16 +111,16 @@ Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>34</td>
+<td>98</td>
 <td>com.amazon.test.ProductCheckout@25bbe1b6</td></tr>
 <tr>
-<td title='com.amazon.test.ProductCheckout.testProductCheckout()'><b>testProductCheckout</b><br>Test class: com.amazon.test.ProductCheckout<br>Parameters: null</td>
+<td title='com.amazon.test.ProductCheckout.testProductCheckout()'><b>testProductCheckout</b><br>Test class: com.amazon.test.ProductCheckout<br>Parameters: tv</td>
 <td><div><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;DK-PC&apos;, ip: &apos;192.168.1.104&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_241&apos;
+System info: host: &apos;DK-PC&apos;, ip: &apos;192.168.225.116&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_241&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, databaseEnabled: false, desired: {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, deviceName: A2QDU17111006740, noRest: true, platformName: android, platformVersion: 7.0, udid: A2QDU17111006740}, deviceManufacturer: HUAWEI, deviceModel: BLN-L22, deviceName: A2QDU17111006740, deviceScreenSize: 1080x1920, deviceUDID: A2QDU17111006740, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noRest: true, platform: LINUX, platformName: Android, platformVersion: 7.0, takesScreenshot: true, udid: A2QDU17111006740, warnings: {}, webStorageEnabled: false}
-Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
+Session ID: 8fe25fee-6883-4d7f-90c1-4ecc6a76f3ab
 *** Element info: {Using=id, value=com.amazon.mShop.android.shopping:id/sign_in_button}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
@@ -162,16 +146,16 @@ Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
 	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:183)
 	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:180)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	at com.amazon.pages.BaseClass.waitForElementPresence(BaseClass.java:163)
+	at com.amazon.pages.BaseClass.waitForElementPresence(BaseClass.java:170)
 	at com.amazon.pages.LoginPage.loginToAmazon(LoginPage.java:44)
-	at com.amazon.test.ProductCheckout.testProductCheckout(ProductCheckout.java:54)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1826747905", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1826747905'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
+	at com.amazon.test.ProductCheckout.testProductCheckout(ProductCheckout.java:55)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1897221921", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1897221921'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;DK-PC&apos;, ip: &apos;192.168.1.104&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_241&apos;
+System info: host: &apos;DK-PC&apos;, ip: &apos;192.168.225.116&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_241&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, databaseEnabled: false, desired: {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, deviceName: A2QDU17111006740, noRest: true, platformName: android, platformVersion: 7.0, udid: A2QDU17111006740}, deviceManufacturer: HUAWEI, deviceModel: BLN-L22, deviceName: A2QDU17111006740, deviceScreenSize: 1080x1920, deviceUDID: A2QDU17111006740, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noRest: true, platform: LINUX, platformName: Android, platformVersion: 7.0, takesScreenshot: true, udid: A2QDU17111006740, warnings: {}, webStorageEnabled: false}
-Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
+Session ID: 8fe25fee-6883-4d7f-90c1-4ecc6a76f3ab
 *** Element info: {Using=id, value=com.amazon.mShop.android.shopping:id/sign_in_button}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -201,9 +185,9 @@ Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
 	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:183)
 	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:180)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
-	at com.amazon.pages.BaseClass.waitForElementPresence(BaseClass.java:163)
+	at com.amazon.pages.BaseClass.waitForElementPresence(BaseClass.java:170)
 	at com.amazon.pages.LoginPage.loginToAmazon(LoginPage.java:44)
-	at com.amazon.test.ProductCheckout.testProductCheckout(ProductCheckout.java:54)
+	at com.amazon.test.ProductCheckout.testProductCheckout(ProductCheckout.java:55)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -229,16 +213,16 @@ Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>55</td>
+<td>64</td>
 <td>com.amazon.test.ProductCheckout@25bbe1b6</td></tr>
 <tr>
 <td title='com.amazon.test.ProductCheckout.testProductCheckout()'><b>testProductCheckout</b><br>Test class: com.amazon.test.ProductCheckout</td>
 <td><div><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;DK-PC&apos;, ip: &apos;192.168.1.104&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_241&apos;
+System info: host: &apos;DK-PC&apos;, ip: &apos;192.168.225.116&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_241&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, databaseEnabled: false, desired: {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, deviceName: A2QDU17111006740, noRest: true, platformName: android, platformVersion: 7.0, udid: A2QDU17111006740}, deviceManufacturer: HUAWEI, deviceModel: BLN-L22, deviceName: A2QDU17111006740, deviceScreenSize: 1080x1920, deviceUDID: A2QDU17111006740, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noRest: true, platform: LINUX, platformName: Android, platformVersion: 7.0, takesScreenshot: true, udid: A2QDU17111006740, warnings: {}, webStorageEnabled: false}
-Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
+Session ID: 8fe25fee-6883-4d7f-90c1-4ecc6a76f3ab
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -249,15 +233,15 @@ Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
 	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:294)
-	at com.amazon.pages.BaseClass.takeScreenshot(BaseClass.java:173)
+	at com.amazon.pages.BaseClass.takeScreenshot(BaseClass.java:183)
 	at com.amazon.common.Listeners.onTestFailure(Listeners.java:33)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1816468636", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1816468636'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1921553024", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1921553024'><pre>org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
-System info: host: &apos;DK-PC&apos;, ip: &apos;192.168.1.104&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_241&apos;
+System info: host: &apos;DK-PC&apos;, ip: &apos;192.168.225.116&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_241&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, databaseEnabled: false, desired: {app: C:\Users\dk\Downloads\Amazo..., appActivity: com.amazon.mShop.splashscre..., appPackage: com.amazon.mShop.android.sh..., autoGrantPermissions: true, deviceName: A2QDU17111006740, noRest: true, platformName: android, platformVersion: 7.0, udid: A2QDU17111006740}, deviceManufacturer: HUAWEI, deviceModel: BLN-L22, deviceName: A2QDU17111006740, deviceScreenSize: 1080x1920, deviceUDID: A2QDU17111006740, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, noRest: true, platform: LINUX, platformName: Android, platformVersion: 7.0, takesScreenshot: true, udid: A2QDU17111006740, warnings: {}, webStorageEnabled: false}
-Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
+Session ID: 8fe25fee-6883-4d7f-90c1-4ecc6a76f3ab
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -272,7 +256,7 @@ Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
 	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:294)
-	at com.amazon.pages.BaseClass.takeScreenshot(BaseClass.java:173)
+	at com.amazon.pages.BaseClass.takeScreenshot(BaseClass.java:183)
 	at com.amazon.common.Listeners.onTestFailure(Listeners.java:33)
 	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1686)
 	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1670)
@@ -296,7 +280,7 @@ Session ID: 0b50c86b-971f-4ee5-9326-5bbfe040fa60
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>93</td>
+<td>168</td>
 <td>com.amazon.test.ProductCheckout@25bbe1b6</td></tr>
 </table><p>
 </body>
