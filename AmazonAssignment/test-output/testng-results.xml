@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Gmail Suite" duration-ms="1202" started-at="2020-05-04T15:28:21Z" finished-at="2020-05-04T15:28:22Z">
+  <suite name="Gmail Suite" duration-ms="99653" started-at="2020-05-05T08:29:49Z" finished-at="2020-05-05T08:31:28Z">
     <groups>
     </groups>
-    <test name="amazonProductCheckout" duration-ms="1202" started-at="2020-05-04T15:28:21Z" finished-at="2020-05-04T15:28:22Z">
+    <test name="amazonProductCheckout" duration-ms="99653" started-at="2020-05-05T08:29:49Z" finished-at="2020-05-05T08:31:28Z">
       <class name="com.amazon.test.ProductCheckout">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.amazon.test.ProductCheckout@25bbe1b6]" name="setup" is-config="true" duration-ms="23083" started-at="2020-05-04T20:57:58Z" finished-at="2020-05-04T20:58:21Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.amazon.test.ProductCheckout@25bbe1b6]" name="setup" is-config="true" duration-ms="22218" started-at="2020-05-05T13:59:26Z" finished-at="2020-05-05T13:59:49Z">
           <params>
             <param index="0">
               <value>
@@ -18,50 +18,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="SKIP" signature="testProductCheckout(java.lang.String)[pri:0, instance:com.amazon.test.ProductCheckout@25bbe1b6]" name="testProductCheckout" duration-ms="0" started-at="2020-05-04T20:58:22Z" data-provider="productType" finished-at="2020-05-04T20:58:22Z">
-          <exception class="java.lang.RuntimeException">
-            <message>
-              <![CDATA[java.lang.ArrayIndexOutOfBoundsException: 1]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: java.lang.ArrayIndexOutOfBoundsException: 1
-	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:162)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:430)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1270)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:985)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1075)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:774)
-	at org.testng.TestRunner.run(TestRunner.java:624)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.run(TestNG.java:1048)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.ArrayIndexOutOfBoundsException: 1
-	at com.amazon.test.ProductCheckout.loginData(ProductCheckout.java:106)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:136)
-	... 20 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
+        <test-method status="PASS" signature="testProductCheckout(java.lang.String)[pri:0, instance:com.amazon.test.ProductCheckout@25bbe1b6]" name="testProductCheckout" duration-ms="98181" started-at="2020-05-05T13:59:50Z" data-provider="productType" finished-at="2020-05-05T14:01:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[65 inch TV]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testProductCheckout -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.amazon.test.ProductCheckout@25bbe1b6]" name="teardown" is-config="true" duration-ms="2630" started-at="2020-05-04T20:58:22Z" finished-at="2020-05-04T20:58:24Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.amazon.test.ProductCheckout@25bbe1b6]" name="teardown" is-config="true" duration-ms="3342" started-at="2020-05-05T14:01:28Z" finished-at="2020-05-05T14:01:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

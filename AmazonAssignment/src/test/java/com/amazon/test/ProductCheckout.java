@@ -105,7 +105,7 @@ public class ProductCheckout extends BaseClass {
 	
 	@DataProvider(name="productType")
 	public Object[][] searchInputData() throws IOException {
-		Object[][] arrayObject = readInputFromExcel("F:\\Interviews\\oxy_ws\\AmazonAssignment\\src\\main\\resources\\configs\\TestData\\ProductSearchType1.xlsx");
+		Object[][] arrayObject = readInputFromExcel("F:\\Interviews\\oxy_ws\\AmazonAssignment\\src\\main\\resources\\configs\\TestData\\ProductSearchType.xlsx");
 		return arrayObject;
 	}
 
