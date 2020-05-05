@@ -19,12 +19,16 @@ import io.appium.java_client.MobileElement;
  *  History : 
  *  2020-Apr-29 Karthika : Initial Version 
  *  2020-Apr-30 Karthika : Handled validations
+ *  2020-May-05 Karthika : Added validation for product price
+ *  2020-May-05 Karthika : Refactored the code as per review comments
+ *     
  */
 
 public class ProductDetailPage extends BaseClass{
 	PropertyUtility putility = new PropertyUtility(PROPERTY_FILE_PATH);
 	private static final Logger LOGGER = Logger.getLogger(ProductCheckout.class.getName());
 	By checkoutProductName = putility.getObject("checkoutProductName");
+	By priceinDetailsPage = putility.getObject("priceinDetailsPage");
 	
 	/* Method returns product title displayed in details page */
 	public String getProductTitle() {
@@ -32,6 +36,14 @@ public class ProductDetailPage extends BaseClass{
 		LOGGER.info("Product title is found"+checkoutProductNameWE);
 		String checkoutProductName = getText(checkoutProductNameWE);
 		return checkoutProductName;
+	}
+	
+	/* Method returns product price displayed in details page */
+	public String getProductPrice() {
+		MobileElement checkoutProductPriceWE = (MobileElement) driver.findElement(priceinDetailsPage);
+		LOGGER.info("Product price is found"+checkoutProductPriceWE);
+		String checkoutProductPrice = getText(checkoutProductPriceWE);
+		return checkoutProductPrice;
 	}
 
 }

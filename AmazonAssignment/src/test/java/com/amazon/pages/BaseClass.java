@@ -46,6 +46,7 @@ import io.appium.java_client.android.AndroidDriver;
  *         2020-Apr-30 Karthika : Added few methods to handle common actions
  *         2020-May-04 Karthika : Re-factored the code
  *         2020-May-04 Karthika : Added method to read input data from excel
+ * 		   2020-May-05 Karthika : Refactored the code as per review comments
  * 
  */
 
@@ -227,11 +228,23 @@ public class BaseClass {
 
 		return Data;
 	}
-	
-	public static void main(String args[]) throws IOException {
-		readInputFromExcel("F:\\Interviews\\oxy_ws\\AmazonAssignment\\src\\main\\resources\\configs\\TestData\\ProductSearchType1.xlsx");
+
+	/* Method to split the string */
+	public String split(String textToSplit) {
+		String[] arrOfStr = textToSplit.split(" ");
+		String number = "";
+		String letter = "";
+		for (int i = 0; i < arrOfStr[0].length(); i++) {
+			char a = arrOfStr[0].charAt(i);
+			if (Character.isDigit(a)) {
+				number = number + a;
+
+			} else {
+				letter = letter + a;
+			}
+		}
+		return number;
 	}
-	
 
 	/* Methd to quit the driver after the test executed */
 	@AfterSuite

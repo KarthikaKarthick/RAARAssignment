@@ -37,6 +37,7 @@ public class ProductSearchPage extends BaseClass{
 	By opt_Sort = putility.getObject("opt_Sort");
 	By opt_Television = putility.getObject("opt_Television");
 	By opt_TelevisionSize = putility.getObject("opt_TelevisionSize");
+	By priceinSearchPage = putility.getObject("priceinSearchPage");
 	
 	MobileElement element;
 	
@@ -48,16 +49,22 @@ public class ProductSearchPage extends BaseClass{
 	}
 	
 	/* Method to scroll to the particular element */
-	public MobileElement scrollToTheProduct() {
+	public MobileElement scrollToTheProduct(String eleText,String resourceId) {
+		//resourceId = "";
 		element = (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
-				"new UiScrollable(new UiSelector().resourceId(\"com.amazon.mShop.android.shopping:id/rs_search_results_root\")).scrollIntoView("
-						+ "new UiSelector().text(\"Shinco 165 cm (65 Inches) 4K UHD Smart LED TV S65QHDR10 (Black) (2019 model)\"))"));
+				"new UiScrollable(new UiSelector().resourceId(\""+resourceId+"\")).scrollIntoView("
+						+ "new UiSelector().text(\""+eleText+"\"))"));
 		return element;
 	}
 	
 	/* Method to get the product title */
 	public String getProductText() {
 		return getText(element);
+	}
+	
+	public String getProductPrice() {
+		MobileElement priceEle = (MobileElement) driver.findElement(priceinSearchPage);
+		return getText(priceEle);
 	}
 	
 }

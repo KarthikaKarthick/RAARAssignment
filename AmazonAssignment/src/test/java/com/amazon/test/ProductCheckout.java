@@ -45,12 +45,14 @@ public class ProductCheckout extends BaseClass {
 	By search = putility.getObject("search");
 	By ratings = putility.getObject("ratings");
 	By checkoutProductName = putility.getObject("checkoutProductName");
+	By addToCart = putility.getObject("addToCart");
 
 	/*
 	 * Testcase to compare the details of product search page with product checkout page
 	 */
 	@Test(dataProvider="productType")
 	public void testProductCheckout(String productSearchType) {
+		System.out.println(System.getProperty("user.dir"));
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginToAmazon();
 		// to select the language
@@ -67,34 +69,37 @@ public class ProductCheckout extends BaseClass {
 
 		// Identify Elememt using Text usimg scroll gesture
 		ProductSearchPage productSearchPage = new ProductSearchPage();
-
-		MobileElement element = productSearchPage.scrollToTheProduct();
+		String eleText = "Tulsi California Almonds 1kg";
+		String resourceId ="com.amazon.mShop.android.shopping:id/rs_search_results_root";
+		MobileElement element = productSearchPage.scrollToTheProduct(eleText,resourceId);
 		boolean response = element.isDisplayed();
 		assertTrue(response);
 		LOGGER.info("Scrolled to particular product");
 
 		String searchProductName = productSearchPage.getProductText();
+		String searchProductPrice = split(productSearchPage.getProductPrice());
 		element.click();
 		rotateScreen(ScreenOrientation.PORTRAIT);
 
-		languageSelection();
+		//languageSelection();
 
 		waitForElementPresence(checkoutProductName);
 		ProductDetailPage productDetailPage = new ProductDetailPage();
 		String checkoutProductName = productDetailPage.getProductTitle();
+		String[] checkoutProductPrice = productDetailPage.getProductPrice().split(" ");
 		assertEquals(searchProductName, checkoutProductName);
-		if (searchProductName.equalsIgnoreCase(checkoutProductName)) {
+		assertEquals(searchProductPrice, checkoutProductPrice[1]);
+		if (searchProductName.equalsIgnoreCase(checkoutProductName) && searchProductPrice.equalsIgnoreCase(checkoutProductPrice[1])) {
 			LOGGER.info("Test case ran successfully");
 		}
+		
 	}
 	public void languageSelection() {
 		try {
           if( driver.findElement(languageSelection).isDisplayed() && driver.findElement(languageSelection).isEnabled()) {
         	  clickElement(languageSelection);
-        	  
         	  waitForElementPresence(saveChanges);
         	  clickElement(saveChanges);
-        	  LOGGER.info("saveChanges button" + saveChanges + "  clicked");
           }
 		}
 		catch(NoSuchElementException igNoSuchElementException) {
@@ -105,7 +110,7 @@ public class ProductCheckout extends BaseClass {
 	
 	@DataProvider(name="productType")
 	public Object[][] searchInputData() throws IOException {
-		Object[][] arrayObject = readInputFromExcel("F:\\Interviews\\oxy_ws\\AmazonAssignment\\src\\main\\resources\\configs\\TestData\\ProductSearchType.xlsx");
+		Object[][] arrayObject = readInputFromExcel(System.getProperty("user.dir")+"\\src\\main\\resources\\configs\\TestData\\ProductSearchType.xlsx");
 		return arrayObject;
 	}
 
