@@ -249,6 +249,6 @@ public class BaseClass {
 	/* Methd to quit the driver after the test executed */
 	@AfterSuite
 	public void teardown() throws IOException {
-		driver.quit();
+		//driver.quit();
 	}
 }
